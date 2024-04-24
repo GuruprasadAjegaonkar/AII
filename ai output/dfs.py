@@ -1,0 +1,14 @@
+graph={
+	'A':['B','E'],'B':['C','D'],'C':[],'D':[],'E':['F','G'],'F':[],'G':[]
+}
+visited=set()
+
+def dfs(visited,graph,root):
+	if root not in visited:
+		print(root)
+		visited.add(root)
+		for neighbour in graph[root]:
+			dfs(visited,graph,neighbour)
+
+
+dfs(visited,graph,'A')
